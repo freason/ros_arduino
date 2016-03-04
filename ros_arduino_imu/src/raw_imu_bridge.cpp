@@ -34,6 +34,7 @@ RawImuBridge::RawImuBridge(ros::NodeHandle nh, ros::NodeHandle pnh):
       ROS_INFO("IMU calibration found.");
       pnh_.getParam("imu/accelerometer_bias", acceleration_bias_);
       pnh_.getParam("imu/gyroscope_bias", gyroscope_bias_);
+      is_calibrated_ = true;
     }
 
     pnh_.param<int>("imu/calibration_samples", calibration_samples_, 500);
